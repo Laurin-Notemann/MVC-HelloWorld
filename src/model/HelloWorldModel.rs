@@ -1,0 +1,3 @@
+struct HelloWorldModel {
+  name: String,
+}
