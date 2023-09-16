@@ -1,1 +1,1 @@
-pub mod HelloWorldController;
+pub mod hello_controller;

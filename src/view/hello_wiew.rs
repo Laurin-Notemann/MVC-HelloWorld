@@ -1,13 +1,13 @@
-use crate::logger::Logger::Logger;
-use crate::configuration::Configuration::Configuration;
+use crate::logger::logger::Logger;
+use crate::configuration::configuration::Configuration;
 use text_io::read;
 
-pub struct HelloWorldView <'a>{
+pub struct HelloView <'a>{
     pub logger: &'a (dyn Logger + 'a),
     pub config: &'a Configuration,
 }
 
-impl<'a> HelloWorldView <'a> {
+impl<'a> HelloView <'a> {
     pub fn new(logger: &'a dyn Logger, config: &'a Configuration) -> Self{
       Self { logger, config }
     }

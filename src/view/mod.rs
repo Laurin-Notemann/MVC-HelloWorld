@@ -1,1 +1,1 @@
-pub mod HelloWorldView;
+pub mod hello_wiew;

@@ -1,23 +1,23 @@
 use crate::{
-    configuration::Configuration::Configuration,
-    model::HelloWorldModel::HelloWorldModel, view::HelloWorldView::HelloWorldView,
+    configuration::configuration::Configuration,
+    model::hello_model::HelloModel, view::hello_wiew::HelloView,
 };
 
-use crate::logger::Logger::Logger;
+use crate::logger::logger::Logger;
 
-pub struct HelloWorldController<'a> {
+pub struct HelloController<'a> {
     pub logger: &'a (dyn Logger + 'a),
     pub config: &'a Configuration,
-    pub model: &'a mut HelloWorldModel<'a>,
-    pub view: &'a HelloWorldView<'a>,
+    pub model: &'a mut HelloModel<'a>,
+    pub view: &'a HelloView<'a>,
 }
 
-impl<'a> HelloWorldController<'a> {
+impl<'a> HelloController<'a> {
     pub fn new(
         logger: &'a dyn Logger,
         config: &'a Configuration,
-        model: &'a mut HelloWorldModel<'a>,
-        view: &'a HelloWorldView,
+        model: &'a mut HelloModel<'a>,
+        view: &'a HelloView,
     ) -> Self {
         Self {
             logger,

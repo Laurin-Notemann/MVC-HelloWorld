@@ -1,27 +1,24 @@
-use configuration::Configuration::Configuration;
-use controller::HelloWorldController::HelloWorldController;
-use logger::Logger::{ConsLog, ScopedLogger};
-use model::HelloWorldModel::HelloWorldModel;
-use view::HelloWorldView::HelloWorldView;
+use configuration::configuration::Configuration;
+use controller::hello_controller::HelloController;
+use logger::logger::ScopedLogger;
+use model::hello_model::HelloModel;
+use view::hello_wiew::HelloView;
 
-mod model;
-mod view;
+mod configuration;
 mod controller;
 mod logger;
-mod configuration;
+mod model;
+mod view;
 
 fn main() {
-  let logger = ConsLog::new();
+    let prefixes = vec!["Hello-Program".to_owned()];
+    let hello_logger = ScopedLogger::new(prefixes);
+    let config = Configuration::new();
 
-  let prefixes = vec!["Hello".to_owned()];
-  let hello_logger = ScopedLogger::new(prefixes);
-  let config = Configuration::new();
+    let mut model = HelloModel::new(&hello_logger, &config);
+    let view = HelloView::new(&hello_logger, &config);
 
-  let mut model = HelloWorldModel::new(&hello_logger, &config);
-  let view = HelloWorldView::new(&logger, &config);
+    let mut hello = HelloController::new(&hello_logger, &config, &mut model, &view);
 
-  let mut hello = HelloWorldController::new(&logger, &config, &mut model, &view);
-
-  hello.ask_and_save_name();
-
+    hello.ask_and_save_name();
 }

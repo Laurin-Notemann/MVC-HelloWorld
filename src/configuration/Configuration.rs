@@ -7,8 +7,12 @@ impl Configuration {
   pub fn new() -> Self {
     Self{
       verbose: false,
-      logging: true
+      logging: false
     }
+  }
+
+  pub fn set_logging(&mut self, logging: bool) {
+    self.logging =  logging;
   }
     
 }

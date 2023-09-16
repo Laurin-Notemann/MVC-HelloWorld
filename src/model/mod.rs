@@ -1,1 +1,1 @@
-pub mod HelloWorldModel;
+  pub mod hello_model;

@@ -1,12 +1,12 @@
-use crate::{configuration::Configuration::Configuration, logger::Logger::Logger};
+use crate::{configuration::configuration::Configuration, logger::logger::Logger};
 
-pub struct HelloWorldModel <'a>  {
+pub struct HelloModel <'a>  {
     pub logger: &'a (dyn Logger + 'a),
     pub config: &'a Configuration,
     pub name: Option<String>,
 }
 
-impl<'a> HelloWorldModel <'a>{
+impl<'a> HelloModel <'a>{
     pub fn new(logger: &'a dyn Logger, config: &'a Configuration) -> Self {
         if config.logging {
           logger.info("")
