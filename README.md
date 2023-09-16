@@ -7,6 +7,11 @@
 curl https://sh.rustup.rs -sSf | sh
 ```
 
+2. Source cargo
+```bash
+source "$HOME/.cargo/env"
+```
+
 2. Clone Repository
 ```bash
 git clone https://github.com/Laurin-Notemann/MVC-HelloWorld

@@ -28,7 +28,6 @@ impl<'a> HelloController<'a> {
     }
 
     pub fn ask_and_save_name(&mut self) {
-        self.logger.info("dangs");
         self.save_name(self.ask_name());
         self.output_name();
     }
