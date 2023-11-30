@@ -3,7 +3,6 @@ use controller::hello_controller::HelloController;
 use logger::logger::ScopedLogger;
 use model::hello_model::HelloModel;
 use view::hello_wiew::HelloView;
-
 mod configuration;
 mod controller;
 mod logger;
